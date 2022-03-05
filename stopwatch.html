@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <!-- normalise -->
+    <link rel="stylesheet" href="./normalize.css" />
+    <!-- style -->
+    <link rel="stylesheet" href="stopwatch.css" />
+  </head>
+  <body>
+    <section class="stopwatch">
+      <div class="time">
+        <div class="minutes"></div>
+        <div class="semi-colon">:</div>
+        <div class="seconds"></div>
+        <div class="comma">,</div>
+        <div class="centi-seconds"></div>
+      </div>
+      <div class="controls">
+        <div class="buttons">
+          <button class="btn btn-left lap-btn">lap</button>
+          <button class="btn btn-right start-btn">start</button>
+        </div>
+        <div class="laps">
+          <div class="lap">
+            <p class="lap-number"></p>
+            <p class="lap-time"></p>
+          </div>
+          <div class="line"></div>
+          <div class="lap">
+            <p class="lap-number"></p>
+            <p class="lap-time"></p>
+          </div>
+          <div class="line"></div>
+          <div class="lap">
+            <p class="lap-number"></p>
+            <p class="lap-time"></p>
+          </div>
+          <div class="line"></div>
+          <div class="lap">
+            <p class="lap-number"></p>
+            <p class="lap-time"></p>
+          </div>
+          <div class="line"></div>
+          <div class="lap">
+            <p class="lap-number"></p>
+            <p class="lap-time"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="./stopwatch.js"></script>
+</html>
