@@ -1,7 +1,5 @@
 class Stopwatch {
-  //   constructor(time, laps, startStopBtn, lapResetBtn) {
   constructor(minutes, seconds, centiSeconds, laps, startStopBtn, lapResetBtn) {
-    // this.time = time;
     this.minutes = minutes;
     this.seconds = seconds;
     this.centiSeconds = centiSeconds;
@@ -14,7 +12,6 @@ class Stopwatch {
     this.minutesPassed = makeStringLengthTwo(this.minutesPassed);
     this.secondsPassed = makeStringLengthTwo(this.secondsPassed);
     this.centiSecondsPassed = makeStringLengthTwo(this.centiSecondsPassed);
-    // this.time.textContent = `${this.minutesPassed}:${this.secondsPassed},${this.centiSecondsPassed}`;
     this.minutes.textContent = this.minutesPassed;
     this.seconds.textContent = this.secondsPassed;
     this.centiSeconds.textContent = this.centiSecondsPassed;
@@ -31,7 +28,7 @@ class Stopwatch {
       .join("");
   }
   reset() {
-    this.msPassed = 444444;
+    this.msPassed = 0;
     this.mutableMsPassed = 0;
     this.minutesPassed = 0;
     this.secondsPassed = 0;
@@ -108,12 +105,12 @@ class Stopwatch {
       this.highestLap.lapNumber
         ? this.lapsArr.splice(this.highestLap.index + 1, 0, {
             lapNumber: currentLapNumber,
-            // lapTime: this.time.textContent,
+
             lapTime: `${this.minutesPassed}:${this.secondsPassed},${this.centiSecondsPassed}`,
           })
         : this.lapsArr.unshift({
             lapNumber: currentLapNumber,
-            // lapTime: this.time.textContent,
+
             lapTime: `${this.minutesPassed}:${this.secondsPassed},${this.centiSecondsPassed}`,
           });
       if (
@@ -128,7 +125,6 @@ class Stopwatch {
         this.laps.style.paddingRight = "3px";
       }
       document.querySelector(".last-lap").scrollIntoView();
-      //   console.log(lastlap);
     } else {
       this.reset();
     }
@@ -144,7 +140,6 @@ function makeStringLengthTwo(number) {
   return string;
 }
 
-// const time = document.querySelector(".time");
 const minutes = document.querySelector(".minutes");
 const seconds = document.querySelector(".seconds");
 const centiSeconds = document.querySelector(".centi-seconds");
@@ -152,7 +147,6 @@ const startStopBtn = document.querySelector(".start-btn");
 const lapResetBtn = document.querySelector(".lap-btn");
 const laps = document.querySelector(".laps");
 
-// const stopwatch = new Stopwatch(time, laps, startStopBtn, lapResetBtn);
 const stopwatch = new Stopwatch(
   minutes,
   seconds,
