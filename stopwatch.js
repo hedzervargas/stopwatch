@@ -31,7 +31,7 @@ class Stopwatch {
       .join("");
   }
   reset() {
-    this.msPassed = 0;
+    this.msPassed = 444444;
     this.mutableMsPassed = 0;
     this.minutesPassed = 0;
     this.secondsPassed = 0;
@@ -73,9 +73,17 @@ class Stopwatch {
           this.centiSecondsPassed++;
           this.mutableMsPassed -= 10;
         }
-
         this.updateDisplay();
         if (!this.isRunning) clearInterval(myInterval);
+
+        if (
+          this.minutesPassed == 99 &&
+          this.secondsPassed == 59 &&
+          this.centiSecondsPassed == 99
+        ) {
+          clearInterval(myInterval);
+          this.startStop();
+        }
       }, 1);
       this.isRunning = true;
       this.startStopBtn.textContent = "Stop";
